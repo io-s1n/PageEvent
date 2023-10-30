@@ -2,7 +2,6 @@ package io.s1n.bucket.minio;
 
 import internal.MinioCredential;
 import io.minio.MinioClient;
-import okhttp3.OkHttpClient;
 
 public class MinioDefaultClient {
 

@@ -20,13 +20,11 @@ class HtmlCompressTest {
   static void setup() throws IOException {
     htmlCompress = HtmlCompress.defaultCompressor();
 
-    InputStream testHtmlResource = HtmlCompressTest.class.getClassLoader()
-        .getResourceAsStream("sample.html");
-
-    try (testHtmlResource) {
-      SAMPLE_HTML = new BufferedReader(new InputStreamReader(testHtmlResource))
-          .lines().collect(Collectors.joining("\n"));
-    }
+    try (InputStream testHtmlResource = HtmlCompressTest.class.getClassLoader()
+        .getResourceAsStream("sample.html")) {
+        SAMPLE_HTML = new BufferedReader(new InputStreamReader(testHtmlResource))
+            .lines().collect(Collectors.joining("\n"));
+      }
   }
 
   @Test
